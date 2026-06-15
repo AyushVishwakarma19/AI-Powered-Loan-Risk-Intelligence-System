@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>About - AI Loan Risk Intelligence</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Geist:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#a8f2d3",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e3de",
+                        "primary-fixed": "#bcefc7",
+                        "surface-container-low": "#f3f4ef",
+                        "outline-variant": "#c1c9bf",
+                        "surface-container-high": "#e7e9e4",
+                        "on-surface": "#1a1c1a",
+                        "primary-fixed-dim": "#a1d2ac",
+                        "surface-dim": "#d9dad6",
+                        "tertiary-fixed-dim": "#b4cdb3",
+                        "on-tertiary-container": "#3c523d",
+                        "on-surface-variant": "#414942",
+                        "surface": "#f9faf5",
+                        "outline": "#717971",
+                        "on-secondary-container": "#267058",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d0e9ce",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#abc4aa",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#0b200f",
+                        "on-primary-fixed": "#00210e",
+                        "secondary": "#1e6a53",
+                        "background": "#f9faf5",
+                        "tertiary": "#4e644e",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#8cd5b8",
+                        "on-primary-container": "#285537",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#364c38",
+                        "surface-bright": "#f9faf5",
+                        "primary": "#3b6848",
+                        "primary-container": "#98c9a3",
+                        "surface-container": "#edeee9",
+                        "on-secondary-fixed": "#002116",
+                        "secondary-fixed": "#a8f2d3",
+                        "inverse-surface": "#2e312e",
+                        "surface-variant": "#e2e3de",
+                        "inverse-primary": "#a1d2ac",
+                        "surface-tint": "#3b6848",
+                        "on-primary-fixed-variant": "#224f32",
+                        "on-background": "#1a1c1a",
+                        "inverse-on-surface": "#f0f1ec",
+                        "on-secondary-fixed-variant": "#00513c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "32px",
+                        "max-width": "1440px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f9faf5;
+            color: #1a1c1a;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(191, 216, 189, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(113, 121, 113, 0.2);
+        }
+
+        .mesh-bg {
+            background-image: radial-gradient(at 0% 0%, #edeec9 0%, transparent 50%),
+                radial-gradient(at 100% 0%, #dde7c7 0%, transparent 50%),
+                radial-gradient(at 100% 100%, #bfd8bd 0%, transparent 50%),
+                radial-gradient(at 0% 100%, #98c9a3 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md">
+    <!-- TopNavBar -->
+    <header
+        class="bg-background/80 dark:bg-background/80 backdrop-blur-md border-b border-outline-variant/30 docked full-width top-0 sticky z-50">
+        <div class="flex justify-between items-center h-[72px] px-container-padding w-full max-w-max-width mx-auto">
+            <div class="flex items-center gap-4">
+                <span
+                    class="text-headline-md font-headline-md font-semibold text-primary dark:text-primary-fixed">AI-Powered
+                    Loan Risk Intelligence System</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md"
+                    href="/">Home</a>
+                <a class="text-primary dark:text-primary-fixed border-b-2 border-secondary pb-1 font-semibold font-body-md"
+                    href="/about">About</a>
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md"
+                    href="/dashboard">Dashboard</a>
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md"
+                    href="/predict">Risk Prediction</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body-md h-full flex items-center"
+                    href="/history">History</a>
+            </nav>
+        </div>
+    </header>
+    <main class="mesh-bg min-h-screen">
+        <!-- Hero Section -->
+        <section class="max-w-max-width mx-auto px-container-padding py-20 text-center relative">
+            <div class="max-w-4xl mx-auto space-y-6 transition-all duration-700 opacity-100 translate-y-0">
+                <span
+                    class="text-label-md font-label-md text-secondary uppercase tracking-widest bg-secondary-container/30 px-4 py-1 rounded-full">Machine
+                    Learning Risk Assessment</span>
+                <h1 class="text-display-lg font-headline-lg text-on-surface leading-tight">About the Loan Risk
+                    Assessment Project</h1>
+                <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">A technical project
+                    demonstrating an end-to-end loan risk assessment pipeline using machine learning, PostgreSQL, and
+                    Flask, supported by Power BI reporting and analytics.</p>
+            </div>
+        </section>
+        <!-- Problem Statement -->
+        <section class="max-w-max-width mx-auto px-container-padding py-16">
+            <div
+                class="grid grid-cols-1 md:grid-cols-12 gap-gutter transition-all duration-700 opacity-100 translate-y-0">
+                <div class="md:col-span-4 flex flex-col justify-center">
+                    <span class="text-label-sm font-label-sm text-secondary uppercase mb-2">The Challenge</span>
+                    <h2 class="text-headline-lg font-headline-lg text-on-surface">The Legacy Problem</h2>
+                    <p class="mt-4 text-body-md text-on-surface-variant">
+                        Traditional loan assessment models are burdened by inefficiency, relying on fragmented systems
+                        that fail to capture real-time risk dynamics.
+                    </p>
+                </div>
+                <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 bg-error-container/30 text-error rounded-lg flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined">analytics</span>
+                        </div>
+                        <h3 class="text-headline-md font-headline-md mb-3">Manual Processes</h3>
+                        <p class="text-body-md text-on-surface-variant">Underwriting workflows often rely on manual data
+                            entry, leading to inefficiencies and potential for human error in risk calculation.</p>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 bg-tertiary-container/30 text-tertiary rounded-lg flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined">database_off</span>
+                        </div>
+                        <h3 class="text-headline-md font-headline-md mb-3">Data Silos</h3>
+                        <p class="text-body-md text-on-surface-variant">Critical borrower data trapped in static files
+                            or disconnected spreadsheets, preventing a unified view of loan portfolio health.</p>
+                    </div>
+                    <div
+                        class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow flex items-start gap-8">
+                        <div
+                            class="w-12 h-12 bg-secondary-container/30 text-secondary rounded-lg flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined">history</span>
+                        </div>
+                        <div>
+                            <h3 class="text-headline-md font-headline-md mb-3">Critical Lag Time</h3>
+                            <p class="text-body-md text-on-surface-variant">Traditional reporting cycles cause delays in
+                                identifying high-risk loan profiles before they impact the final assessment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Solution Overview -->
+        <section class="max-w-max-width mx-auto px-container-padding py-24">
+            <div
+                class="glass-card rounded-3xl p-12 relative overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
+                <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent"></div>
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-label-sm font-label-sm text-secondary uppercase mb-2">Our Solution</span>
+                        <h2 class="text-display-lg font-headline-lg text-on-surface mb-6">Redefining Certainty</h2>
+                        <p class="text-body-lg text-on-surface-variant mb-10 leading-relaxed">Our system integrates
+                            multi-dimensional datasets into a single source of truth, leveraging Machine Learning Risk
+                            Assessment to provide a proactive stance on loan risk management.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="flex gap-4"><span class="material-symbols-outlined text-secondary"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface">Risk Scoring</h4>
+                                    <p class="text-label-sm text-on-surface-variant">Probability of Default scoring
+                                        based on borrower loan data.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4"><span class="material-symbols-outlined text-secondary"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface">Default Prediction</h4>
+                                    <p class="text-label-sm text-on-surface-variant">Logistic Regression model
+                                        predicting binary default outcomes.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4"><span class="material-symbols-outlined text-secondary"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface">Portfolio Monitoring</h4>
+                                    <p class="text-label-sm text-on-surface-variant">PostgreSQL-driven data storage for
+                                        consistent record tracking.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4"><span class="material-symbols-outlined text-secondary"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface">AI Insights</h4>
+                                    <p class="text-label-sm text-on-surface-variant">Automated borrower risk insights
+                                        generated from model outputs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border-4 border-surface-container-lowest/50 shadow-2xl">
+                        <img alt="Dashboard Visualization" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6_WQsd3PetfVF6A3abpKnWQZ1DVOIGMooPoCdOUrbCpnjSnhju6JH96robM1DvPA40lie4HD5QP7hJMp1eniJ6B1NadDuhDC48QyPu16uDgvIj5_czD10m1pZxrvXbo4Rb7CzfeFe5CQsg3uh4i3BCoUd9jWLF9rDNs59fQeaG-YRL9X9KAWDN2LZLCTCq7evqYQAwhgsreU73vTj8uyVLgLsujgZuZri06SgSk8618q3J4oe8sCiaiatjJE_L4efUuXdrHnUk9S7">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Architecture Section - Updated Flow -->
+        <section class="max-w-max-width mx-auto px-container-padding py-20">
+            <div class="text-center mb-16 transition-all duration-700 opacity-100 translate-y-0">
+                <h2 class="text-headline-lg font-headline-lg text-on-surface">System Architecture</h2>
+                <p class="text-body-md text-on-surface-variant">From raw data to intelligent decision support</p>
+            </div>
+            <div class="relative transition-all duration-700 opacity-100 translate-y-0">
+                <!-- Wrapper for horizontal scrolling on mobile -->
+                <div
+                    class="flex overflow-x-auto lg:overflow-x-visible pb-12 lg:pb-0 gap-8 items-start justify-between min-w-max lg:min-w-0">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center w-40 lg:w-1/7 shrink-0 relative">
+                        <div
+                            class="w-16 h-16 rounded-full bg-surface-container-high border-2 border-primary flex items-center justify-center mb-4 z-10 shadow-lg">
+                            <span class="material-symbols-outlined text-primary">database</span>
+                        </div>
+                        <h4 class="text-label-md font-bold text-on-surface">Dataset</h4>
+                        <div
+                            class="hidden lg:block absolute top-8 left-[calc(100%-8px)] w-[calc(100%-32px)] h-px bg-outline-variant/50">
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center w-40 lg:w-1/7 shrink-0 relative">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary-container/30 border-2 border-primary flex items-center justify-center mb-4 z-10 shadow-lg">
+                            <span class="material-symbols-outlined text-primary">engineering</span>
+                        </div>
+                        <h4 class="text-label-md font-bold text-on-surface">Feature Engineering</h4>
+                        <div
+                            class="hidden lg:block absolute top-8 left-[calc(100%-8px)] w-[calc(100%-32px)] h-px bg-outline-variant/50">
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center w-40 lg:w-1/7 shrink-0 relative">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary-container border-2 border-on-primary-container flex items-center justify-center mb-4 z-10 shadow-lg">
+                            <span class="material-symbols-outlined text-on-primary-container">model_training</span>
+                        </div>
+                        <h4 class="text-label-md font-bold text-on-surface text-center px-2">Machine Learning Model</h4>
+                        <div
+                            class="hidden lg:block absolute top-8 left-[calc(100%-8px)] w-[calc(100%-32px)] h-px bg-outline-variant/50">
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center w-40 lg:w-1/7 shrink-0 relative">
+                        <div
+                            class="w-16 h-16 rounded-full bg-secondary-container border-2 border-secondary flex items-center justify-center mb-4 z-10 shadow-lg">
+                            <span class="material-symbols-outlined text-secondary">psychology</span>
+                        </div>
+                        <h4 class="text-label-md font-bold text-on-surface">Risk Intelligence Engine</h4>
+                        <div
+                            class="hidden lg:block absolute top-8 left-[calc(100%-8px)] w-[calc(100%-32px)] h-px bg-outline-variant/50">
+                        </div>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="flex flex-col items-center text-center w-40 lg:w-1/7 shrink-0 relative">
+                        <div
+                            class="w-16 h-16 rounded-full bg-surface-container-highest border-2 border-outline flex items-center justify-center mb-4 z-10 shadow-lg">
+                            <span class="material-symbols-outlined text-outline">storage</span>
+                        </div>
+                        <h4 class="text-label-md font-bold text-on-surface">PostgreSQL Database</h4>
+                        <div
+                            class="hidden lg:block absolute top-8 left-[calc(100%-8px)] w-[calc(100%-32px)] h-px bg-outline-variant/50">
+                        </div>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="flex flex-col items-center text-center w-40 lg:w-1/7 shrink-0 relative">
+
+                        <div
+                            class="w-16 h-16 rounded-full bg-inverse-surface border-2 border-outline flex items-center justify-center mb-4 z-10 shadow-lg">
+
+                            <span class="material-symbols-outlined text-inverse-on-surface">web</span>
+
+                        </div>
+
+                        <h4 class="text-label-md font-bold text-on-surface">Flask Web Application</h4>
+
+                        <div
+                            class="hidden lg:block absolute top-8 left-[calc(100%-8px)] w-[calc(100%-32px)] h-px bg-outline-variant/50">
+                        </div>
+
+                    </div>
+                    <!-- Step 7 -->
+                    <div class="flex flex-col items-center text-center w-40 lg:w-1/7 shrink-0 relative">
+                        <div
+                            class="w-16 h-16 rounded-full bg-yellow-100 border-2 border-yellow-600 flex items-center justify-center mb-4 z-10 shadow-lg">
+                            <span class="material-symbols-outlined text-yellow-700">monitoring</span>
+                        </div>
+                        <h4 class="text-label-md font-bold text-on-surface">Power BI Dashboard</h4>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Key Outcomes - Updated Metrics -->
+        <section class="max-w-max-width mx-auto px-container-padding py-24">
+            <div class="mb-12 transition-all duration-700 opacity-100 translate-y-0">
+                <span class="text-label-sm font-label-sm text-secondary uppercase mb-2">Impact</span>
+                <h2 class="text-headline-lg font-headline-lg text-on-surface">Key Outcomes</h2>
+            </div>
+            <div
+                class="grid grid-cols-1 md:grid-cols-4 gap-gutter transition-all duration-700 opacity-100 translate-y-0">
+                <div class="bg-surface-container p-8 rounded-xl border-l-4 border-primary">
+                    <h5 class="text-[28px] font-bold text-on-surface mb-2">Risk Scoring Engine</h5>
+                    <p class="text-label-md font-label-md text-primary uppercase font-semibold">Automated borrower risk
+                        evaluation
+                    </p>
+                </div>
+                <div class="bg-surface-container p-8 rounded-xl border-l-4 border-secondary">
+                    <h5 class="text-[28px] font-bold text-on-surface mb-2">Default Prediction</h5>
+                    <p class="text-label-md font-label-md text-secondary uppercase font-semibold">Probability-based
+                        lending insights
+                    </p>
+                </div>
+                <div class="bg-surface-container p-8 rounded-xl border-l-4 border-secondary">
+                    <h5 class="text-[28px] font-bold text-on-surface mb-2">Prediction History</h5>
+                    <p class="text-label-md font-label-md text-secondary uppercase font-semibold">Historical assessment
+                        tracking</p>
+                </div>
+                <div class="bg-surface-container p-8 rounded-xl border-l-4 border-primary">
+                    <h5 class="text-[28px] font-bold text-on-surface mb-2">AI Risk Recommendations</h5>
+                    <p class="text-label-md font-label-md text-primary uppercase font-semibold">LLM-assisted risk
+                        explanations
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container border-t border-outline-variant/20 py-16">
+        <div class="max-w-7xl mx-auto px-container-padding grid grid-cols-[1.6fr_1fr_0.9fr] gap-20 items-start">
+            <div class="flex flex-col gap-3 col-span-1 max-w-xl -ml-6">
+                <div class="text-label-md font-bold uppercase tracking-wider text-secondary">
+                    AI-POWERED LOAN RISK INTELLIGENCE SYSTEM
+                </div>
+
+                <p class="text-body-md text-on-surface-variant leading-relaxed">
+                    An end-to-end AI Loan Risk Intelligence System designed to assess borrower risk, support lending
+                    decisions, and maintain historical prediction records.
+                </p>
+
+                <p class="text-label-sm text-outline mt-2">
+                    © 2026 AI-Powered Loan Risk Intelligence System
+                </p>
+
+                <div class="mt-1">
+                    <p class="text-body-sm text-on-surface-variant">
+                        Data Analytics • Machine Learning • Power BI
+                    </p>
+
+                    <p class="text-label-sm text-outline mt-2">
+                        Portfolio Project by Ayush Vishwakarma
+                    </p>
+                </div>
+            </div>
+            <!-- Center Section -->
+            <div class="flex flex-col gap-6 min-w-[280px] ml-10">
+
+                <div class="text-label-sm font-bold uppercase tracking-widest text-on-surface">
+                    Project Highlights
+                </div>
+
+                <ul class="flex flex-col gap-3">
+                    <li class="text-body-md text-on-surface-variant">
+                        • Machine Learning Risk Prediction
+                    </li>
+
+                    <li class="text-body-md text-on-surface-variant">
+                        • Borrower Risk Assessment
+                    </li>
+
+                    <li class="text-body-md text-on-surface-variant">
+                        • Prediction History Tracking
+                    </li>
+
+                    <li class="text-body-md text-on-surface-variant">
+                        • AI-Driven Lending Insights
+                    </li>
+
+                    <li class="text-body-md text-on-surface-variant">
+                        • Interactive Risk Monitoring
+                    </li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-6 justify-self-end">
+                <div class="text-label-sm font-bold uppercase tracking-widest text-on-surface">Technology Stack</div>
+                <ul class="flex flex-col gap-3">
+                    <li class="text-body-md text-on-surface-variant">Python</li>
+                    <li class="text-body-md text-on-surface-variant">PostgreSQL</li>
+                    <li class="text-body-md text-on-surface-variant">Power BI</li>
+                    <li class="text-body-md text-on-surface-variant">Flask</li>
+                    <li class="text-body-md text-on-surface-variant">Scikit-Learn</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(div => {
+            div.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(div);
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

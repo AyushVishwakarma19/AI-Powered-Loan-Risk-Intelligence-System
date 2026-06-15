@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+venv/
+.env
+
+notebooks/03_ml_model_training.ipynb
+data/processed/loan_risk_intelligence_final.csv
