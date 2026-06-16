@@ -4,10 +4,6 @@
 
 🔗 https://ai-powered-loan-risk-intelligence-system.onrender.com
 
-## GitHub Repository
-
-🔗 https://github.com/AyushVishwakarma19/AI-Powered-Loan-Risk-Intelligence-System
-
 An end-to-end machine learning and analytics platform designed to assess borrower risk, support lending decisions, and provide portfolio intelligence through predictive analytics, AI-generated insights, and interactive dashboards.
 
 ---
