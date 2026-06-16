@@ -7,8 +7,19 @@ import json
 import psycopg2
 import os
 
-with open("../models/loan_risk_model.pkl", "rb") as file:
+# with open("../models/loan_risk_model.pkl", "rb") as file:
+#     model = pickle.load(file)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "models",
+    "loan_risk_model.pkl"
+)
+
+with open(MODEL_PATH, "rb") as file:
     model = pickle.load(file)
+
 # print(model.feature_names_in_)
 
 app = Flask(
