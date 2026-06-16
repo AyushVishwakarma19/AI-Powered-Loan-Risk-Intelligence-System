@@ -47,6 +47,32 @@ else:
 
 cursor = conn.cursor()
 
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS prediction_history (
+
+    id SERIAL PRIMARY KEY,
+
+    age INTEGER,
+    income NUMERIC,
+    loan_amount NUMERIC,
+    credit_score INTEGER,
+    loan_term INTEGER,
+    employment_type VARCHAR(50),
+
+    risk_score INTEGER,
+    risk_category VARCHAR(50),
+    default_probability NUMERIC,
+
+    ai_decision VARCHAR(50),
+    ai_recommendation TEXT,
+
+    prediction_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+""")
+
+conn.commit()
+
+
 def create_features(
     age,
     income,
