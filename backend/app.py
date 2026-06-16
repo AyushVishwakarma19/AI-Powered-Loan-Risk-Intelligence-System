@@ -419,7 +419,10 @@ def predict():
             #     "Manual underwriting review is strongly recommended."
             # )
 
-        
+        if len(risk_factors) == 0:
+           risk_factors.append(
+               "Borrower profile does not exhibit any major risk indicators requiring additional review."
+            )
         
         print(X)
         print("Prediction:", prediction)
