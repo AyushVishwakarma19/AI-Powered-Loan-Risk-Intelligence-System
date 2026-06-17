@@ -357,7 +357,7 @@
                 </div>
                 <!-- AI Recommendation Full Width -->
                 <div class="
-                    md:col-span-2 p-8 rounded-xl relative overflow-hidden text-white
+                    md:col-span-2 p-5 md:p-8 rounded-xl relative overflow-hidden text-white
                     {% if risk_color == 'low' %}
                     bg-green-900
                     {% elif risk_color == 'medium' %}
@@ -382,14 +382,14 @@
                             <span class="text-label-sm font-label-sm uppercase tracking-widest text-outline-variant">AI
                                 Lending Intelligence</span>
                         </div>
-                        <div class="space-y-5">
+                        <div class="space-y-4 md:space-y-5">
 
                             <div>
                                 <p class="text-label-sm uppercase tracking-widest text-outline-variant mb-2">
                                     Explanation
                                 </p>
 
-                                <p class="text-body-lg leading-relaxed">
+                                <p class="text-body-md md:text-body-lg leading-relaxed">
                                     {{ ai_explanation if ai_explanation else
                                     "AI-generated borrower explanation will appear here after risk analysis." }}
                                 </p>
@@ -400,7 +400,7 @@
                                     Decision
                                 </p>
 
-                                <p class="text-headline-md font-semibold">
+                                <p class="text-title-lg md:text-headline-md font-semibold">
                                     {{ ai_decision if ai_decision else "Pending" }}
                                 </p>
                             </div>
@@ -423,7 +423,7 @@
                 </div>
 
                 <!-- Risk Factors / Explainability -->
-                <div class="md:col-span-2 bg-white border border-outline-variant/30 p-6 rounded-xl shadow-sm">
+                <div class="md:col-span-2 bg-white border border-outline-variant/30 p-4 md:p-6 rounded-xl shadow-sm">
 
                     <div class="flex items-center gap-3 mb-4">
                         <span class="material-symbols-outlined text-primary">
