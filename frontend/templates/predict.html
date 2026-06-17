@@ -241,7 +241,7 @@
                 {% else %}
                 bg-red-100
                 {% endif %}
-                p-8 rounded-xl flex flex-col justify-between min-h-[300px]">
+                p-8 rounded-xl flex flex-col justify-between min-h-[220px] md:min-h-[300px]">
                     <div>
                         <span
                             class="text-label-sm font-label-sm text-secondary uppercase tracking-widest block mb-4">Risk
@@ -255,7 +255,7 @@
                             {% else %}
                             text-red-700
                             {% endif %}
-                            text-display-lg font-display-lg"> {{ risk_category if
+                            text-5xl md:text-display-lg font-display-lg"> {{ risk_category if
                                 risk_category else "Awaiting Analysis" }}</h2>
                             <span class="
                             material-symbols-outlined mb-3
