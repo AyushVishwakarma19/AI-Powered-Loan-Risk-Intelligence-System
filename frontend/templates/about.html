@@ -173,44 +173,101 @@
   <body class="bg-background text-on-surface font-body-md">
     <!-- TopNavBar -->
     <header
-      class="bg-background/80 dark:bg-background/80 backdrop-blur-md border-b border-outline-variant/30 docked full-width top-0 sticky z-50"
+      class="bg-background/80 dark:bg-background/80 backdrop-blur-md border-b border-outline-variant/30 sticky top-0 z-50"
     >
       <div
-        class="flex justify-between items-center h-[72px] px-container-padding w-full max-w-max-width mx-auto"
+        class="relative flex justify-between items-center h-[72px] px-container-padding w-full max-w-max-width mx-auto"
       >
+        <!-- Logo -->
         <div class="flex items-center gap-4">
           <span
-            class="text-headline-md font-headline-md font-semibold text-primary dark:text-primary-fixed"
-            >AI-Powered Loan Risk Intelligence System</span
+            class="text-headline-md font-headline-md font-semibold text-primary"
           >
+            AI-Powered Loan Risk Intelligence System
+          </span>
         </div>
+
+        <!-- Desktop Menu -->
         <nav class="hidden md:flex items-center gap-8">
           <a
-            class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md"
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
             href="/"
-            >Home</a
           >
+            Home
+          </a>
+
           <a
-            class="text-primary dark:text-primary-fixed border-b-2 border-secondary pb-1 font-semibold font-body-md"
+            class="text-primary border-b-2 border-secondary pb-1 font-semibold font-body-md"
             href="/about"
-            >About</a
           >
+            About
+          </a>
+
           <a
-            class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md"
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
             href="/dashboard"
-            >Dashboard</a
           >
+            Dashboard
+          </a>
+
           <a
-            class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md"
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
             href="/predict"
-            >Risk Prediction</a
           >
+            Risk Prediction
+          </a>
+
           <a
-            class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body-md h-full flex items-center"
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
             href="/history"
-            >History</a
           >
+            History
+          </a>
         </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-btn"
+          class="md:hidden material-symbols-outlined text-on-surface p-2"
+        >
+          menu
+        </button>
+
+        <!-- Mobile Dropdown -->
+        <div
+          id="mobile-menu"
+          class="hidden absolute top-[72px] left-0 w-full bg-background border-t border-outline-variant/30 shadow-lg md:hidden"
+        >
+          <a
+            class="block px-6 py-4 border-b border-outline-variant/20"
+            href="/"
+          >
+            Home
+          </a>
+
+          <a
+            class="block px-6 py-4 border-b border-outline-variant/20 text-primary font-semibold"
+            href="/about"
+          >
+            About
+          </a>
+
+          <a
+            class="block px-6 py-4 border-b border-outline-variant/20"
+            href="/dashboard"
+          >
+            Dashboard
+          </a>
+
+          <a
+            class="block px-6 py-4 border-b border-outline-variant/20"
+            href="/predict"
+          >
+            Risk Prediction
+          </a>
+
+          <a class="block px-6 py-4" href="/history"> History </a>
+        </div>
       </div>
     </header>
     <main class="mesh-bg min-h-screen">
@@ -762,6 +819,19 @@
           "translate-y-8",
         );
         observer.observe(div);
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (menuBtn) {
+          menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
       });
     </script>
   </body>

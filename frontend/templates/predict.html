@@ -1,540 +1,692 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html class="light" lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Predict - AI-Powered Loan Risk Intelligence System</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
     <link
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap"
+      rel="stylesheet"
+    />
     <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "secondary-container": "#a8f2d3",
-                        "error-container": "#ffdad6",
-                        "surface-container-highest": "#e2e3de",
-                        "primary-fixed": "#bcefc7",
-                        "surface-container-low": "#f3f4ef",
-                        "outline-variant": "#c1c9bf",
-                        "surface-container-high": "#e7e9e4",
-                        "on-surface": "#1a1c1a",
-                        "primary-fixed-dim": "#a1d2ac",
-                        "surface-dim": "#d9dad6",
-                        "tertiary-fixed-dim": "#b4cdb3",
-                        "on-tertiary-container": "#3c523d",
-                        "on-surface-variant": "#414942",
-                        "surface": "#f9faf5",
-                        "outline": "#717971",
-                        "on-secondary-container": "#267058",
-                        "on-error": "#ffffff",
-                        "tertiary-fixed": "#d0e9ce",
-                        "on-secondary": "#ffffff",
-                        "tertiary-container": "#abc4aa",
-                        "on-tertiary": "#ffffff",
-                        "on-primary": "#ffffff",
-                        "on-tertiary-fixed": "#0b200f",
-                        "on-primary-fixed": "#00210e",
-                        "secondary": "#1e6a53",
-                        "background": "#f9faf5",
-                        "tertiary": "#4e644e",
-                        "on-error-container": "#93000a",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary-fixed-dim": "#8cd5b8",
-                        "on-primary-container": "#285537",
-                        "error": "#ba1a1a",
-                        "on-tertiary-fixed-variant": "#364c38",
-                        "surface-bright": "#f9faf5",
-                        "primary": "#3b6848",
-                        "primary-container": "#98c9a3",
-                        "surface-container": "#edeee9",
-                        "on-secondary-fixed": "#002116",
-                        "secondary-fixed": "#a8f2d3",
-                        "inverse-surface": "#2e312e",
-                        "surface-variant": "#e2e3de",
-                        "inverse-primary": "#a1d2ac",
-                        "surface-tint": "#3b6848",
-                        "on-primary-fixed-variant": "#224f32",
-                        "on-background": "#1a1c1a",
-                        "inverse-on-surface": "#f0f1ec",
-                        "on-secondary-fixed-variant": "#00513c"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "container-padding": "32px",
-                        "max-width": "1440px",
-                        "margin-mobile": "16px",
-                        "base": "8px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["Geist"],
-                        "label-md": ["JetBrains Mono"],
-                        "headline-lg": ["Geist"],
-                        "body-lg": ["Geist"],
-                        "label-sm": ["JetBrains Mono"],
-                        "headline-lg-mobile": ["Geist"],
-                        "body-md": ["Geist"],
-                        "display-lg": ["Geist"]
-                    },
-                    "fontSize": {
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
-                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
-                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
-                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
-                    }
-                },
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#a8f2d3",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e2e3de",
+              "primary-fixed": "#bcefc7",
+              "surface-container-low": "#f3f4ef",
+              "outline-variant": "#c1c9bf",
+              "surface-container-high": "#e7e9e4",
+              "on-surface": "#1a1c1a",
+              "primary-fixed-dim": "#a1d2ac",
+              "surface-dim": "#d9dad6",
+              "tertiary-fixed-dim": "#b4cdb3",
+              "on-tertiary-container": "#3c523d",
+              "on-surface-variant": "#414942",
+              surface: "#f9faf5",
+              outline: "#717971",
+              "on-secondary-container": "#267058",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#d0e9ce",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#abc4aa",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#0b200f",
+              "on-primary-fixed": "#00210e",
+              secondary: "#1e6a53",
+              background: "#f9faf5",
+              tertiary: "#4e644e",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#8cd5b8",
+              "on-primary-container": "#285537",
+              error: "#ba1a1a",
+              "on-tertiary-fixed-variant": "#364c38",
+              "surface-bright": "#f9faf5",
+              primary: "#3b6848",
+              "primary-container": "#98c9a3",
+              "surface-container": "#edeee9",
+              "on-secondary-fixed": "#002116",
+              "secondary-fixed": "#a8f2d3",
+              "inverse-surface": "#2e312e",
+              "surface-variant": "#e2e3de",
+              "inverse-primary": "#a1d2ac",
+              "surface-tint": "#3b6848",
+              "on-primary-fixed-variant": "#224f32",
+              "on-background": "#1a1c1a",
+              "inverse-on-surface": "#f0f1ec",
+              "on-secondary-fixed-variant": "#00513c",
             },
-        }
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "container-padding": "32px",
+              "max-width": "1440px",
+              "margin-mobile": "16px",
+              base: "8px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "headline-md": ["Geist"],
+              "label-md": ["JetBrains Mono"],
+              "headline-lg": ["Geist"],
+              "body-lg": ["Geist"],
+              "label-sm": ["JetBrains Mono"],
+              "headline-lg-mobile": ["Geist"],
+              "body-md": ["Geist"],
+              "display-lg": ["Geist"],
+            },
+            fontSize: {
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "500" },
+              ],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "600" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
     </script>
     <style>
-        body {
-            background-color: #f9faf5;
-            color: #1a1c1a;
-            font-family: 'Geist', sans-serif;
-        }
+      body {
+        background-color: #f9faf5;
+        color: #1a1c1a;
+        font-family: "Geist", sans-serif;
+      }
 
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
 
-        .risk-card {
-            background-color: #BFD8BD;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 12px 24px -10px rgba(30, 106, 83, 0.05);
-        }
+      .risk-card {
+        background-color: #bfd8bd;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 12px 24px -10px rgba(30, 106, 83, 0.05);
+      }
 
-        .form-input-focus:focus {
-            outline: none;
-            border-color: #1e6a53;
-            background-color: #ffffff;
-            ring: 1px;
-            ring-color: #1e6a53;
-        }
+      .form-input-focus:focus {
+        outline: none;
+        border-color: #1e6a53;
+        background-color: #ffffff;
+        ring: 1px;
+        ring-color: #1e6a53;
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-background text-on-surface font-body-md">
+  <body class="bg-background text-on-surface font-body-md">
     <!-- TopAppBar -->
     <header
-        class="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/30 h-[72px] flex items-center">
-        <div class="flex justify-between items-center w-full max-w-max-width mx-auto px-container-padding">
-            <div class="flex items-center gap-4">
-                <span class="text-headline-md font-headline-md font-bold tracking-tight text-primary">AI-Powered Loan
-                    Risk Intelligence System</span>
-            </div>
-            <nav class="hidden md:flex items-center gap-gutter"><a
-                    class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md font-medium"
-                    href="/">Home</a><a
-                    class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md font-medium"
-                    href="/about">About</a><a
-                    class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md font-medium"
-                    href="/dashboard">Dashboard</a><a
-                    class="text-primary border-b-2 border-primary pb-1 font-semibold font-body-md text-body-md"
-                    href="/predict">Risk Prediction</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body-md h-full flex items-center"
-                    href="/history">History</a>
-            </nav>
+      class="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/30 h-[72px] flex items-center"
+    >
+      <div
+        class="flex justify-between items-center w-full max-w-max-width mx-auto px-container-padding"
+      >
+        <div class="flex items-center gap-4">
+          <span
+            class="text-headline-md font-headline-md font-bold tracking-tight text-primary"
+            >AI-Powered Loan Risk Intelligence System</span
+          >
         </div>
+        <nav class="hidden md:flex items-center gap-gutter">
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md font-medium"
+            href="/"
+            >Home</a
+          ><a
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md font-medium"
+            href="/about"
+            >About</a
+          ><a
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md font-medium"
+            href="/dashboard"
+            >Dashboard</a
+          ><a
+            class="text-primary border-b-2 border-primary pb-1 font-semibold font-body-md text-body-md"
+            href="/predict"
+            >Risk Prediction</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-body-md h-full flex items-center"
+            href="/history"
+            >History</a
+          >
+        </nav>
+        <div class="md:hidden">
+          <button
+            id="menu-btn"
+            class="material-symbols-outlined text-on-surface p-2"
+          >
+            menu
+          </button>
+        </div>
+
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden bg-background border-b border-outline-variant/30"
+        >
+          <a
+            href="/"
+            class="block px-6 py-4 border-b border-outline-variant/20"
+          >
+            Home
+          </a>
+
+          <a
+            href="/about"
+            class="block px-6 py-4 border-b border-outline-variant/20"
+          >
+            About
+          </a>
+
+          <a
+            href="/dashboard"
+            class="block px-6 py-4 border-b border-outline-variant/20"
+          >
+            Dashboard
+          </a>
+
+          <a
+            href="/predict"
+            class="block px-6 py-4 border-b border-outline-variant/20 text-primary font-semibold"
+          >
+            Risk Prediction
+          </a>
+
+          <a href="/history" class="block px-6 py-4"> History </a>
+        </div>
+      </div>
     </header>
-    <main class="flex-grow w-full max-w-max-width mx-auto px-container-padding py-12">
-        <div class="mb-10">
-            <h1 class="text-display-lg font-display-lg text-on-surface tracking-tight">Machine Learning Risk Engine</h1>
-            <p class="text-body-lg font-body-lg text-on-surface-variant mt-2 max-w-2xl">Execute real-time credit risk
-                inference using our Flask-integrated Logistic Regression model. Predictions are generated by analyzing
-                borrower attributes against historical default patterns stored in PostgreSQL.</p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
-            <!-- Analysis Form Section -->
-            <section class="lg:col-span-5 bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20">
-                <header class="border-b border-outline-variant/30 pb-4 mb-6 flex items-center">
-                    <span class="text-label-sm font-label-sm text-outline uppercase tracking-widest">Model
-                        Parameters</span>
-                    <span class="material-symbols-outlined text-primary/40">settings_input_component</span>
-                </header>
-                <form class="space-y-5" method="POST" action="/predict">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="space-y-2">
-                            <label class="text-label-md font-label-md text-on-surface-variant block">Age</label>
-                            <input name="age"
-                                class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
-                                placeholder="e.g. 34" type="number" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-label-md font-label-md text-on-surface-variant block">Annual Income
-                                (USD)</label>
-                            <input name="income"
-                                class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
-                                placeholder="e.g. 85000" type="number" />
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="space-y-2">
-                            <label class="text-label-md font-label-md text-on-surface-variant block">Loan Amount</label>
-                            <input name="loan_amount"
-                                class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
-                                placeholder="e.g. 25000" type="number" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-label-md font-label-md text-on-surface-variant block">Loan Term
-                                (Months)</label>
-                            <input name="loan_term"
-                                class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
-                                placeholder="e.g. 36" type="number" />
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-label-md font-label-md text-on-surface-variant block">Credit Score</label>
-                        <input name="credit_score"
-                            class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
-                            placeholder="e.g. 720" type="number" />
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-label-md font-label-md text-on-surface-variant block">Employment Type</label>
-                        <select name="employment_type"
-                            class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus appearance-none">
-                            <option value="">Select employment status</option>
-                            <option>Full-time</option>
-                            <option>Part-time</option>
-                            <option>Self-employed</option>
-                            <option>Contract</option>
-                            <option>Unemployed</option>
-                        </select>
-                    </div>
-                    <button
-                        class="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-headline-md text-headline-md hover:bg-secondary-container transition-all flex items-center justify-center gap-2 mt-4 active:scale-[0.98]">
-                        Analyze Risk
-                        <span class="material-symbols-outlined">bolt</span>
-                    </button>
-                </form>
-            </section>
-            <!-- Results Section -->
-            <section class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-gutter">
-                {% if test_message %}
-                <div style="padding:15px;background:#dff6dd;border-radius:10px;margin-bottom:20px;">
-                    {{ test_message }}
-                </div>
+    <main
+      class="flex-grow w-full max-w-max-width mx-auto px-container-padding py-12"
+    >
+      <div class="mb-10">
+        <h1
+          class="text-display-lg font-display-lg text-on-surface tracking-tight"
+        >
+          Machine Learning Risk Engine
+        </h1>
+        <p
+          class="text-body-lg font-body-lg text-on-surface-variant mt-2 max-w-2xl"
+        >
+          Execute real-time credit risk inference using our Flask-integrated
+          Logistic Regression model. Predictions are generated by analyzing
+          borrower attributes against historical default patterns stored in
+          PostgreSQL.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+        <!-- Analysis Form Section -->
+        <section
+          class="lg:col-span-5 bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20"
+        >
+          <header
+            class="border-b border-outline-variant/30 pb-4 mb-6 flex items-center"
+          >
+            <span
+              class="text-label-sm font-label-sm text-outline uppercase tracking-widest"
+              >Model Parameters</span
+            >
+            <span class="material-symbols-outlined text-primary/40"
+              >settings_input_component</span
+            >
+          </header>
+          <form class="space-y-5" method="POST" action="/predict">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label
+                  class="text-label-md font-label-md text-on-surface-variant block"
+                  >Age</label
+                >
+                <input
+                  name="age"
+                  class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
+                  placeholder="e.g. 34"
+                  type="number"
+                />
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-label-md font-label-md text-on-surface-variant block"
+                  >Annual Income (USD)</label
+                >
+                <input
+                  name="income"
+                  class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
+                  placeholder="e.g. 85000"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label
+                  class="text-label-md font-label-md text-on-surface-variant block"
+                  >Loan Amount</label
+                >
+                <input
+                  name="loan_amount"
+                  class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
+                  placeholder="e.g. 25000"
+                  type="number"
+                />
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-label-md font-label-md text-on-surface-variant block"
+                  >Loan Term (Months)</label
+                >
+                <input
+                  name="loan_term"
+                  class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
+                  placeholder="e.g. 36"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label
+                class="text-label-md font-label-md text-on-surface-variant block"
+                >Credit Score</label
+              >
+              <input
+                name="credit_score"
+                class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus"
+                placeholder="e.g. 720"
+                type="number"
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                class="text-label-md font-label-md text-on-surface-variant block"
+                >Employment Type</label
+              >
+              <select
+                name="employment_type"
+                class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-md font-body-md form-input-focus appearance-none"
+              >
+                <option value="">Select employment status</option>
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Self-employed</option>
+                <option>Contract</option>
+                <option>Unemployed</option>
+              </select>
+            </div>
+            <button
+              class="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-headline-md text-headline-md hover:bg-secondary-container transition-all flex items-center justify-center gap-2 mt-4 active:scale-[0.98]"
+            >
+              Analyze Risk
+              <span class="material-symbols-outlined">bolt</span>
+            </button>
+          </form>
+        </section>
+        <!-- Results Section -->
+        <section
+          class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-gutter"
+        >
+          {% if test_message %}
+          <div
+            style="
+              padding: 15px;
+              background: #dff6dd;
+              border-radius: 10px;
+              margin-bottom: 20px;
+            "
+          >
+            {{ test_message }}
+          </div>
+          {% endif %}
+          <!-- Main Risk Summary -->
+          <div
+            class="{% if risk_color == 'low' %} bg-green-100 {% elif risk_color == 'medium' %} bg-yellow-100 {% else %} bg-red-100 {% endif %} p-8 rounded-xl flex flex-col justify-between min-h-[220px] md:min-h-[300px]"
+          >
+            <div>
+              <span
+                class="text-label-sm font-label-sm text-secondary uppercase tracking-widest block mb-4"
+                >Risk Category</span
+              >
+              <div class="flex items-end gap-3 mb-2">
+                <h2
+                  class="{% if risk_color == 'low' %} text-green-700 {% elif risk_color == 'medium' %} text-yellow-700 {% else %} text-red-700 {% endif %} text-5xl md:text-7xl font-display-lg"
+                >
+                  {{ risk_category if risk_category else "Awaiting Analysis" }}
+                </h2>
+                <span
+                  class="material-symbols-outlined mb-3 {% if risk_color == 'low' %} text-green-700 {% elif risk_color == 'medium' %} text-yellow-700 {% else %} text-red-700 {% endif %}"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >verified</span
+                >
+              </div>
+              <p
+                class="text-body-md font-body-md text-on-secondary-container/80"
+              >
+                {% if risk_category == "Low Risk" %} Applicant demonstrates
+                strong financial stability and repayment capacity. Automated
+                approval can proceed with minimal additional review. {% elif
+                risk_category == "Medium Risk" %} Borrower exhibits moderate
+                risk characteristics. Additional verification of income,
+                employment, and repayment ability is recommended. {% elif
+                risk_category == "High Risk" %} Multiple risk indicators suggest
+                elevated default probability. Manual underwriting and enhanced
+                due diligence are strongly advised. {% else %} Model prediction
+                result will appear here after analysis. {% endif %}
+              </p>
+            </div>
+          </div>
+          <!-- Score Details -->
+          <div class="grid grid-rows-2 gap-gutter">
+            <div
+              class="p-6 rounded-xl flex flex-col justify-center border {% if risk_color == 'low' %} bg-green-100 border-green-300 {% elif risk_color == 'medium' %} bg-yellow-100 border-yellow-300 {% else %} bg-red-100 border-red-300 {% endif %}"
+            >
+              <span
+                class="text-label-sm font-label-sm text-secondary uppercase tracking-widest mb-1"
+                >Risk Score</span
+              >
+              <div class="flex items-baseline gap-2">
+                <span
+                  class="text-headline-lg font-headline-lg {% if risk_color == 'low' %} text-green-700 {% elif risk_color == 'medium' %} text-yellow-700 {% else %} text-red-700 {% endif %}"
+                >
+                  {{ risk_score if risk_score else "--" }}</span
+                >
+                {% if risk_score %}
+                <span class="text-body-md font-body-md text-secondary/60"
+                  >/ 1000</span
+                >
                 {% endif %}
-                <!-- Main Risk Summary -->
-                <div class="
-                {% if risk_color == 'low' %}
-                bg-green-100
-                {% elif risk_color == 'medium' %}
-                bg-yellow-100
-                {% else %}
-                bg-red-100
+              </div>
+              <div
+                class="w-full bg-secondary-container/50 h-1.5 rounded-full mt-4 overflow-hidden"
+              >
+                <div
+                  class="h-full {% if risk_color == 'low' %} bg-green-500 {% elif risk_color == 'medium' %} bg-yellow-500 {% else %} bg-red-500 {% endif %}"
+                  style="width: {{ progress_width if risk_score else 0 }}%; transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="p-6 rounded-xl flex flex-col justify-center shadow-sm border {% if risk_color == 'low' %} bg-green-50 border-green-300 {% elif risk_color == 'medium' %} bg-yellow-50 border-yellow-300 {% else %} bg-red-50 border-red-300 {% endif %}"
+            >
+              <span
+                class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mb-1"
+                >Default Probability</span
+              >
+              <div class="flex items-baseline gap-2">
+                <span
+                  class="text-headline-lg font-headline-lg {% if risk_color == 'low' %} text-green-700 {% elif risk_color == 'medium' %} text-yellow-700 {% else %} text-red-700 {% endif %}"
+                >
+                  {{ default_probability if default_probability else "--"
+                  }}</span
+                >
+                {% if default_probability %}
+                <span
+                  class="text-headline-md font-headline-md text-on-surface-variant"
+                  >%</span
+                >
                 {% endif %}
-                p-8 rounded-xl flex flex-col justify-between min-h-[220px] md:min-h-[300px]">
-                    <div>
-                        <span
-                            class="text-label-sm font-label-sm text-secondary uppercase tracking-widest block mb-4">Risk
-                            Category</span>
-                        <div class="flex items-end gap-3 mb-2">
-                            <h2 class="
-                            {% if risk_color == 'low' %}
-                            text-green-700
-                            {% elif risk_color == 'medium' %}
-                            text-yellow-700
-                            {% else %}
-                            text-red-700
-                            {% endif %}
-                            text-5xl md:text-7xl font-display-lg"> {{ risk_category if
-                                risk_category else "Awaiting Analysis" }}</h2>
-                            <span class="
-                            material-symbols-outlined mb-3
-                            {% if risk_color == 'low' %}
-                            text-green-700
-                            {% elif risk_color == 'medium' %}
-                            text-yellow-700
-                            {% else %}
-                            text-red-700
-                            {% endif %}
-                            " style="font-variation-settings: 'FILL' 1;">verified</span>
-                        </div>
-                        <p class="text-body-md font-body-md text-on-secondary-container/80">{% if risk_category == "Low
-                            Risk" %}
-                            Applicant demonstrates strong financial stability and repayment capacity. Automated approval
-                            can proceed with minimal additional review.
-                            {% elif risk_category == "Medium Risk" %}
-                            Borrower exhibits moderate risk characteristics. Additional verification of income,
-                            employment, and repayment ability is recommended.
-                            {% elif risk_category == "High Risk" %}
-                            Multiple risk indicators suggest elevated default probability. Manual underwriting and
-                            enhanced due diligence are strongly advised.
-                            {% else %}
-                            Model prediction result will appear here after analysis.
-                            {% endif %}</p>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <!-- AI Recommendation Full Width -->
+          <div
+            class="md:col-span-2 p-5 md:p-8 rounded-xl relative overflow-hidden text-white {% if risk_color == 'low' %} bg-green-900 {% elif risk_color == 'medium' %} bg-yellow-900 {% else %} bg-red-900 {% endif %}"
+          >
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center text-white {% if risk_color == 'low' %} bg-green-700 {% elif risk_color == 'medium' %} bg-yellow-700 {% else %} bg-red-700 {% endif %}"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >auto_awesome</span
+                  >
                 </div>
-                <!-- Score Details -->
-                <div class="grid grid-rows-2 gap-gutter">
-                    <div class="
-                        p-6 rounded-xl flex flex-col justify-center border
-                        {% if risk_color == 'low' %}
-                        bg-green-100 border-green-300
-                        {% elif risk_color == 'medium' %}
-                        bg-yellow-100 border-yellow-300
-                        {% else %}
-                        bg-red-100 border-red-300
-                        {% endif %}">
-                        <span class="text-label-sm font-label-sm text-secondary uppercase tracking-widest mb-1">Risk
-                            Score</span>
-                        <div class="flex items-baseline gap-2">
-                            <span class="
-                            text-headline-lg font-headline-lg
-                            {% if risk_color == 'low' %}
-                            text-green-700
-                            {% elif risk_color == 'medium' %}
-                            text-yellow-700
-                            {% else %}
-                            text-red-700
-                            {% endif %}
-                            "> {{ risk_score if risk_score else "--" }}</span>
-                            {% if risk_score %}
-                            <span class="text-body-md font-body-md text-secondary/60">/ 1000</span>
-                            {% endif %}
-                        </div>
-                        <div class="w-full bg-secondary-container/50 h-1.5 rounded-full mt-4 overflow-hidden">
-                            <div class="
-                                h-full
-                                {% if risk_color == 'low' %}
-                                bg-green-500
-                                {% elif risk_color == 'medium' %}
-                                bg-yellow-500
-                                {% else %}
-                                bg-red-500
-                                {% endif %}
-                                "
-                                style="width: {{ progress_width if risk_score else 0 }}%; transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="
-                            p-6 rounded-xl flex flex-col justify-center shadow-sm border
-                            {% if risk_color == 'low' %}
-                            bg-green-50 border-green-300
-                            {% elif risk_color == 'medium' %}
-                            bg-yellow-50 border-yellow-300
-                            {% else %}
-                            bg-red-50 border-red-300
-                            {% endif %}">
-                        <span
-                            class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Default
-                            Probability</span>
-                        <div class="flex items-baseline gap-2">
-                            <span class="
-                            text-headline-lg font-headline-lg
-                            {% if risk_color == 'low' %}
-                            text-green-700
-                            {% elif risk_color == 'medium' %}
-                            text-yellow-700
-                            {% else %}
-                            text-red-700
-                            {% endif %}
-                            "> {{ default_probability if default_probability else "--" }}</span>
-                            {% if default_probability %}
-                            <span class="text-headline-md font-headline-md text-on-surface-variant">%</span>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                <!-- AI Recommendation Full Width -->
-                <div class="
-                    md:col-span-2 p-5 md:p-8 rounded-xl relative overflow-hidden text-white
-                    {% if risk_color == 'low' %}
-                    bg-green-900
-                    {% elif risk_color == 'medium' %}
-                    bg-yellow-900
-                    {% else %}
-                    bg-red-900
-                    {% endif %}">
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="
-                                w-10 h-10 rounded-full flex items-center justify-center text-white
-                                {% if risk_color == 'low' %}
-                                bg-green-700
-                                {% elif risk_color == 'medium' %}
-                                bg-yellow-700
-                                {% else %}
-                                bg-red-700
-                                {% endif %}">
-                                <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-                            </div>
-                            <span class="text-label-sm font-label-sm uppercase tracking-widest text-outline-variant">AI
-                                Lending Intelligence</span>
-                        </div>
-                        <div class="space-y-4 md:space-y-5">
+                <span
+                  class="text-label-sm font-label-sm uppercase tracking-widest text-outline-variant"
+                  >AI Lending Intelligence</span
+                >
+              </div>
+              <div class="space-y-4 md:space-y-5">
+                <div>
+                  <p
+                    class="text-label-sm uppercase tracking-widest text-outline-variant mb-2"
+                  >
+                    Explanation
+                  </p>
 
-                            <div>
-                                <p class="text-label-sm uppercase tracking-widest text-outline-variant mb-2">
-                                    Explanation
-                                </p>
-
-                                <p class="text-body-md md:text-body-lg leading-relaxed">
-                                    {{ ai_explanation if ai_explanation else
-                                    "AI-generated borrower explanation will appear here after risk analysis." }}
-                                </p>
-                            </div>
-
-                            <div>
-                                <p class="text-label-sm uppercase tracking-widest text-outline-variant mb-2">
-                                    Decision
-                                </p>
-
-                                <p class="text-title-lg md:text-headline-md font-semibold">
-                                    {{ ai_decision if ai_decision else "Pending" }}
-                                </p>
-                            </div>
-
-                            <div>
-                                <p class="text-label-sm uppercase tracking-widest text-outline-variant mb-2">
-                                    Recommendation
-                                </p>
-
-                                <p class="text-body-md leading-relaxed">
-                                    {{ ai_llm_recommendation if ai_llm_recommendation else
-                                    "AI recommendation will appear here after analysis." }}
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Aesthetic abstract background element -->
-                    <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+                  <p class="text-body-md md:text-body-lg leading-relaxed">
+                    {{ ai_explanation if ai_explanation else "AI-generated
+                    borrower explanation will appear here after risk analysis."
+                    }}
+                  </p>
                 </div>
 
-                <!-- Risk Factors / Explainability -->
-                <div class="md:col-span-2 bg-white border border-outline-variant/30 p-4 md:p-6 rounded-xl shadow-sm">
+                <div>
+                  <p
+                    class="text-label-sm uppercase tracking-widest text-outline-variant mb-2"
+                  >
+                    Decision
+                  </p>
 
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-primary">
-                            psychology
-                        </span>
-
-                        <h3 class="text-label-md font-semibold uppercase tracking-widest">
-                            AI Risk Factors
-                        </h3>
-                    </div>
-
-                    <ul class="space-y-3">
-                        {% for factor in risk_factors %}
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary">
-                                check_circle
-                            </span>
-                            <span>{{ factor }}</span>
-                        </li>
-                        {% endfor %}
-                    </ul>
-
+                  <p class="text-title-lg md:text-headline-md font-semibold">
+                    {{ ai_decision if ai_decision else "Pending" }}
+                  </p>
                 </div>
-            </section>
-        </div>
+
+                <div>
+                  <p
+                    class="text-label-sm uppercase tracking-widest text-outline-variant mb-2"
+                  >
+                    Recommendation
+                  </p>
+
+                  <p class="text-body-md leading-relaxed">
+                    {{ ai_llm_recommendation if ai_llm_recommendation else "AI
+                    recommendation will appear here after analysis." }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Aesthetic abstract background element -->
+            <div
+              class="absolute -right-12 -bottom-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
+            ></div>
+          </div>
+
+          <!-- Risk Factors / Explainability -->
+          <div
+            class="md:col-span-2 bg-white border border-outline-variant/30 p-4 md:p-6 rounded-xl shadow-sm"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <span class="material-symbols-outlined text-primary">
+                psychology
+              </span>
+
+              <h3 class="text-label-md font-semibold uppercase tracking-widest">
+                AI Risk Factors
+              </h3>
+            </div>
+
+            <ul class="space-y-3">
+              {% for factor in risk_factors %}
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary">
+                  check_circle
+                </span>
+                <span>{{ factor }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
     <!-- Footer -->
-    <footer class="bg-surface-container border-t border-outline-variant/20 py-16 px-container-padding">
-        <div class="max-w-7xl mx-auto px-container-padding grid grid-cols-1 md:grid-cols-[1.6fr_1fr_0.9fr] gap-12 md:gap-20 items-start">
-            <!-- Left Section -->
-            <div class="flex flex-col gap-3 col-span-1 max-w-xl md:-ml-6">
-                <div class="text-label-md font-bold uppercase tracking-wider text-secondary">
-                    AI-POWERED LOAN RISK INTELLIGENCE SYSTEM
-                </div>
+    <footer
+      class="bg-surface-container border-t border-outline-variant/20 py-16 px-container-padding"
+    >
+      <div
+        class="max-w-7xl mx-auto px-container-padding grid grid-cols-1 md:grid-cols-[1.6fr_1fr_0.9fr] gap-12 md:gap-20 items-start"
+      >
+        <!-- Left Section -->
+        <div class="flex flex-col gap-3 col-span-1 max-w-xl md:-ml-6">
+          <div
+            class="text-label-md font-bold uppercase tracking-wider text-secondary"
+          >
+            AI-POWERED LOAN RISK INTELLIGENCE SYSTEM
+          </div>
 
-                <p class="text-body-md text-on-surface-variant leading-relaxed">
-                    An end-to-end AI Loan Risk Intelligence System designed to assess borrower risk, support lending
-                    decisions, and maintain historical prediction records.
-                </p>
+          <p class="text-body-md text-on-surface-variant leading-relaxed">
+            An end-to-end AI Loan Risk Intelligence System designed to assess
+            borrower risk, support lending decisions, and maintain historical
+            prediction records.
+          </p>
 
-                <p class="text-label-sm text-outline mt-2">
-                    © 2026 AI-Powered Loan Risk Intelligence System
-                </p>
+          <p class="text-label-sm text-outline mt-2">
+            © 2026 AI-Powered Loan Risk Intelligence System
+          </p>
 
-                <div class="mt-1">
-                    <p class="text-body-sm text-on-surface-variant">
-                        Data Analytics • Machine Learning • Power BI
-                    </p>
+          <div class="mt-1">
+            <p class="text-body-sm text-on-surface-variant">
+              Data Analytics • Machine Learning • Power BI
+            </p>
 
-                    <p class="text-label-sm text-outline mt-2">
-                        Portfolio Project by Ayush Vishwakarma
-                    </p>
-                </div>
-            </div>
-            <!-- Center Section -->
-            <div class="flex flex-col gap-6 md:min-w-[280px] md:ml-10">
-
-                <div class="text-label-sm font-bold uppercase tracking-widest text-on-surface">
-                    Project Highlights
-                </div>
-
-                <ul class="flex flex-col gap-3">
-                    <li class="text-body-md text-on-surface-variant">
-                        • Machine Learning Risk Prediction
-                    </li>
-
-                    <li class="text-body-md text-on-surface-variant">
-                        • Borrower Risk Assessment
-                    </li>
-
-                    <li class="text-body-md text-on-surface-variant">
-                        • Prediction History Tracking
-                    </li>
-
-                    <li class="text-body-md text-on-surface-variant">
-                        • AI-Driven Lending Insights
-                    </li>
-
-                    <li class="text-body-md text-on-surface-variant">
-                        • Interactive Risk Monitoring
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Right Section -->
-            <div class="flex flex-col gap-6 md:justify-self-end">
-                <div class="text-label-md font-bold uppercase tracking-wider text-on-surface">Technology Stack</div>
-                <ul class="flex flex-col gap-2 text-body-md text-on-surface-variant">
-                    <li class="">Python</li>
-                    <li class="">PostgreSQL</li>
-                    <li class="">Power BI</li>
-                    <li class="">Flask</li>
-                    <li class="">Scikit-Learn</li>
-                </ul>
-            </div>
+            <p class="text-label-sm text-outline mt-2">
+              Portfolio Project by Ayush Vishwakarma
+            </p>
+          </div>
         </div>
+        <!-- Center Section -->
+        <div class="flex flex-col gap-6 md:min-w-[280px] md:ml-10">
+          <div
+            class="text-label-sm font-bold uppercase tracking-widest text-on-surface"
+          >
+            Project Highlights
+          </div>
+
+          <ul class="flex flex-col gap-3">
+            <li class="text-body-md text-on-surface-variant">
+              • Machine Learning Risk Prediction
+            </li>
+
+            <li class="text-body-md text-on-surface-variant">
+              • Borrower Risk Assessment
+            </li>
+
+            <li class="text-body-md text-on-surface-variant">
+              • Prediction History Tracking
+            </li>
+
+            <li class="text-body-md text-on-surface-variant">
+              • AI-Driven Lending Insights
+            </li>
+
+            <li class="text-body-md text-on-surface-variant">
+              • Interactive Risk Monitoring
+            </li>
+          </ul>
+        </div>
+        <!-- Right Section -->
+        <div class="flex flex-col gap-6 md:justify-self-end">
+          <div
+            class="text-label-md font-bold uppercase tracking-wider text-on-surface"
+          >
+            Technology Stack
+          </div>
+          <ul class="flex flex-col gap-2 text-body-md text-on-surface-variant">
+            <li class="">Python</li>
+            <li class="">PostgreSQL</li>
+            <li class="">Power BI</li>
+            <li class="">Flask</li>
+            <li class="">Scikit-Learn</li>
+          </ul>
+        </div>
+      </div>
     </footer>
     <script>
-        // Simple animation for progress bars on load
-        document.addEventListener('DOMContentLoaded', () => {
-            const bars = document.querySelectorAll('.bg-secondary.h-full');
-            bars.forEach(bar => {
-                const targetWidth = bar.style.width;
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.transition = 'width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
-                    bar.style.width = targetWidth;
-                }, 300);
-            });
+      // Simple animation for progress bars on load
+      document.addEventListener("DOMContentLoaded", () => {
+        const bars = document.querySelectorAll(".bg-secondary.h-full");
+        bars.forEach((bar) => {
+          const targetWidth = bar.style.width;
+          bar.style.width = "0%";
+          setTimeout(() => {
+            bar.style.transition =
+              "width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1)";
+            bar.style.width = targetWidth;
+          }, 300);
         });
+      });
     </script>
-</body>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (menuBtn) {
+          menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
